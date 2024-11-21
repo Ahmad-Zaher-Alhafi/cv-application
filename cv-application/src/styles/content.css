@@ -1,0 +1,19 @@
+.content {
+  width: 100%;
+  height: auto;
+  display: flex;
+}
+
+.leftSection {
+  background-color: gray;
+  flex: 1;
+}
+
+.rightSection {
+  background-color: lightgray;
+  flex: 2;
+}
+
+img {
+  width: 250px;
+}
