@@ -1,4 +1,4 @@
-function ResultContact({ address, phoneNumber, email }) {
+function ContactSection({ address, phoneNumber, email }) {
   return (
     <div className="resultContactSection">
       <div className="resultSectionTitle">Contact</div>
@@ -20,4 +20,4 @@ function ResultContact({ address, phoneNumber, email }) {
   );
 }
 
-export default ResultContact;
+export default ContactSection;
