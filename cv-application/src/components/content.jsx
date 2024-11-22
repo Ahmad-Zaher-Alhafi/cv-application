@@ -7,21 +7,27 @@ function Content() {
   const [fullName, setFullName] = useState("Ahmad Zaher Alhafi");
   const [imgUrl, setImgUrl] = useState("./src/assets/CV photo.jpg");
 
-  function OnNameChanged(name) {
-    setFullName(name);
-  }
-
-  function OnImgUrlChanged(imgUrl) {
-    setImgUrl(imgUrl);
-  }
+  const [address, setAddress] = useState("Izmit, Turkey");
+  const [phoneNumber, setPhoneNumber] = useState("+905315190382");
+  const [email, setEmail] = useState("z1_ahmad@hotmail.com");
 
   return (
     <div className="content">
       <EditContent
-        setFullName={OnNameChanged}
-        setImgUrl={OnImgUrlChanged}
+        setFullName={setFullName}
+        setImgUrl={setImgUrl}
+        setAddress={setAddress}
+        setPhoneNumber={setPhoneNumber}
+        setEmail={setEmail}
       ></EditContent>
-      <ResultContent name={fullName} imgUrl={imgUrl}></ResultContent>
+
+      <ResultContent
+        name={fullName}
+        imgUrl={imgUrl}
+        address={address}
+        phoneNumber={phoneNumber}
+        email={email}
+      ></ResultContent>
     </div>
   );
 }

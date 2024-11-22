@@ -1,14 +1,27 @@
 import EditPersonalSection from "./editPersonalSection";
+import EditContactSection from "./editContactSection";
 
-function EditContent({ setFullName, setImgUrl }) {
+function EditContent({
+  setFullName,
+  setImgUrl,
+  setAddress,
+  setPhoneNumber,
+  setEmail,
+}) {
   return (
     <div className="editSection">
       <EditPersonalSection
         onNameChanged={setFullName}
         onImgChanged={setImgUrl}
       ></EditPersonalSection>
+
+      <EditContactSection
+        setAddress={setAddress}
+        setPhoneNumber={setPhoneNumber}
+        setEmail={setEmail}
+      ></EditContactSection>
+
       {/* 
-    contact section
     languages section
     links section
     education section
