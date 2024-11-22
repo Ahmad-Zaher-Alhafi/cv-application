@@ -2,6 +2,18 @@
   width: 100%;
   height: auto;
   display: flex;
+
+  gap: 20px;
+}
+
+.editSection {
+  background-color: lightslategray;
+  flex: 1;
+}
+
+.resultSection {
+  display: flex;
+  flex: 2;
 }
 
 .leftSection {

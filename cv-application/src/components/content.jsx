@@ -1,25 +1,28 @@
-import "../styles/content.css";
-import NameWithPicture from "./nameWithPicture";
-import Contact from "./contact";
+import { useState } from "react";
+import "/src/styles/content.css";
+import EditContent from "./edit-section/editContent";
+import ResultContent from "./result-section/resultContent";
 
 function Content() {
+  const [fullName, setFullName] = useState("Ahmad Zaher Alhafi");
+  const [imgUrl, setImgUrl] = useState("./src/assets/CV photo.jpg");
+
+  function OnNameChanged(name) {
+    setFullName(name);
+  }
+
+  function OnImgUrlChanged(imgUrl) {
+    setImgUrl(imgUrl);
+  }
+
   return (
-    <>
-      <div className="content">
-        <div className="leftSection">
-          <NameWithPicture
-            name={"Ahmad Zaher Alhafi"}
-            picUrl={"./src/assets/CV photo.jpg"}
-          ></NameWithPicture>
-
-          <Contact></Contact>
-        </div>
-
-        <div className="rightSection">
-          <h1>Hello wolrd</h1>
-        </div>
-      </div>
-    </>
+    <div className="content">
+      <EditContent
+        setFullName={OnNameChanged}
+        setImgUrl={OnImgUrlChanged}
+      ></EditContent>
+      <ResultContent name={fullName} imgUrl={imgUrl}></ResultContent>
+    </div>
   );
 }
 
