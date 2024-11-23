@@ -15,6 +15,8 @@ function Content() {
     { name: "English", fluency: "Advanced", key: crypto.randomUUID() },
   ]);
 
+  const [links, setLinks] = useState([]);
+
   return (
     <div className="content">
       <EditContent
@@ -25,6 +27,8 @@ function Content() {
         setEmail={setEmail}
         languages={languages}
         setLanguages={setLanguages}
+        links={links}
+        setLinks={setLinks}
       ></EditContent>
 
       <ResultContent
@@ -34,6 +38,7 @@ function Content() {
         phoneNumber={phoneNumber}
         email={email}
         languages={languages}
+        links={links}
       ></ResultContent>
     </div>
   );
