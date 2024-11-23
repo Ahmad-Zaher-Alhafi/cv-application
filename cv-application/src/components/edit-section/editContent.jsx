@@ -1,5 +1,6 @@
 import EditPersonalSection from "./editPersonalSection";
 import EditContactSection from "./editContactSection";
+import EditLanguagesSection from "./editLanguagesSection";
 
 function EditContent({
   setFullName,
@@ -7,6 +8,8 @@ function EditContent({
   setAddress,
   setPhoneNumber,
   setEmail,
+  languages,
+  setLanguages,
 }) {
   return (
     <div className="editSection">
@@ -21,8 +24,11 @@ function EditContent({
         setEmail={setEmail}
       ></EditContactSection>
 
+      <EditLanguagesSection
+        languages={languages}
+        setLanguages={setLanguages}
+      ></EditLanguagesSection>
       {/* 
-    languages section
     links section
     education section
     summary section

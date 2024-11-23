@@ -11,6 +11,10 @@ function Content() {
   const [phoneNumber, setPhoneNumber] = useState("+905315190382");
   const [email, setEmail] = useState("z1_ahmad@hotmail.com");
 
+  const [languages, setLanguages] = useState([
+    { name: "English", fluency: "Advanced", key: crypto.randomUUID() },
+  ]);
+
   return (
     <div className="content">
       <EditContent
@@ -19,6 +23,8 @@ function Content() {
         setAddress={setAddress}
         setPhoneNumber={setPhoneNumber}
         setEmail={setEmail}
+        languages={languages}
+        setLanguages={setLanguages}
       ></EditContent>
 
       <ResultContent
@@ -27,6 +33,7 @@ function Content() {
         address={address}
         phoneNumber={phoneNumber}
         email={email}
+        languages={languages}
       ></ResultContent>
     </div>
   );

@@ -3,6 +3,7 @@ function LabeledInput({
   inputType = "text",
   placeholder,
   onValueChange,
+  inputValue,
 }) {
   return (
     <div className="labeledInput">
@@ -11,6 +12,7 @@ function LabeledInput({
         type={inputType}
         id="input"
         placeholder={placeholder}
+        value={inputValue}
         onChange={(event) => {
           onValueChange(event.target.value);
         }}

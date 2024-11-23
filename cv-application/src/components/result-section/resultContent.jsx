@@ -1,8 +1,16 @@
 import "/src/styles/content.css";
 import PersonalSection from "./personalSection";
 import ContactSection from "./contactSection";
+import LanguagesSection from "./languagesSeciton";
 
-function ResultContent({ name, imgUrl, address, phoneNumber, email }) {
+function ResultContent({
+  name,
+  imgUrl,
+  address,
+  phoneNumber,
+  email,
+  languages,
+}) {
   return (
     <div className="resultSection">
       <div className="leftSection">
@@ -13,6 +21,8 @@ function ResultContent({ name, imgUrl, address, phoneNumber, email }) {
           phoneNumber={phoneNumber}
           email={email}
         ></ContactSection>
+
+        <LanguagesSection languages={languages}></LanguagesSection>
       </div>
       <div className="rightSection">
         <h1>Right section</h1>

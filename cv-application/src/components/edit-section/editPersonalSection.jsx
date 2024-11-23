@@ -1,4 +1,4 @@
-import LabeledInput from "../result-section/labeledInput";
+import LabeledInput from "./labeledInput";
 
 function EditPersonalSection({ onNameChanged, onImgChanged }) {
   return (
