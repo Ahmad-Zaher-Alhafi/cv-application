@@ -1,76 +1,103 @@
 import { useState } from "react";
-import AddInfoConfiguration from "./addInfoConfiguration";
+import LabeledInput from "./labeledInput";
 import "/src/styles/edit-section/editLinksSection.css";
 
 function EditLinksSection({ links, setLinks }) {
-  const [nameInputValue, setNameInputValue] = useState("");
-  const [urlInputValue, setUrlInputValue] = useState("");
+  const [linksInputs, setLinksInputs] = useState([]);
 
   function addLink() {
-    const newLink = [...links];
-    newLink.push({
-      name: nameInputValue,
-      url: urlInputValue,
-      key: crypto.randomUUID(),
-    });
-    setLinks(newLink);
+    const inputKey = crypto.randomUUID();
 
-    resetToDefaultState();
+    const newLinks = [...links];
+    newLinks.push({
+      key: inputKey,
+    });
+    setLinks(newLinks);
+
+    const newLinksInputs = [...linksInputs];
+    newLinksInputs.push({
+      nameInput: {
+        label: "Link name: ",
+        onValueChanged: (value) => {
+          onLinkNameChanged(newLinks, inputKey, value);
+        },
+        placeholder: "e.g. Linkedin",
+        key: inputKey + "nameKey",
+      },
+
+      urlInput: {
+        label: "Link url: ",
+        onValueChanged: (value) => {
+          onLinkUrlChanged(newLinks, inputKey, value);
+        },
+        placeholder: "https://linkedin.com/yours",
+        key: inputKey + "urlKey",
+      },
+
+      key: inputKey,
+    });
+
+    setLinksInputs(newLinksInputs);
   }
 
-  function resetToDefaultState() {
-    setNameInputValue("");
-    setUrlInputValue("");
+  function onLinkNameChanged(newLinks, key, newName) {
+    const changedLink = newLinks.find((link) => link.key.includes(key));
+    changedLink.name = newName;
+    setLinks((previousLinks) => [...previousLinks]);
+  }
+
+  function onLinkUrlChanged(newLinks, key, newUrl) {
+    const changedLink = newLinks.find((link) => link.key.includes(key));
+    changedLink.url = newUrl;
+    setLinks((previousLinks) => [...previousLinks]);
   }
 
   function deleteLink(linkKey) {
-    const newLinks = [...links].filter((link) => link.key !== linkKey);
+    const newLinks = [...links].filter((link) => !link.key.includes(linkKey));
     setLinks(newLinks);
+
+    const newLinksInputs = linksInputs.filter(
+      (linkInput) => !linkInput.key.includes(linkKey)
+    );
+    setLinksInputs(newLinksInputs);
   }
-
-  const inputs = [
-    {
-      label: "Link name: ",
-      inputValue: nameInputValue,
-      setInputValue: setNameInputValue,
-      placeholder: "e.g. Linkedin",
-    },
-
-    {
-      label: "Link url: ",
-      inputValue: urlInputValue,
-      setInputValue: setUrlInputValue,
-      placeholder: "https://linkedin.com/yours",
-    },
-  ];
 
   return (
     <div className="editLinksSection">
-      <div className="editSectiontitle">Links</div>
+      <div className="addInfoTitle">Add more links: </div>
 
-      <ul className="linksList">
-        {links.map((link) => {
-          return (
-            <div className="linkSection" key={link.key}>
-              <li className="link">
-                <a href={link.url}>{link.name}</a>
-              </li>
-              <button
-                className="deleteLinkButton"
-                onClick={() => deleteLink(link.key)}
-              >
-                X
-              </button>
-            </div>
-          );
-        })}
-      </ul>
+      {linksInputs.map((linkInputs) => {
+        return (
+          <div className="addInfoContent" key={linkInputs.key}>
+            <LabeledInput
+              label={linkInputs.nameInput.label}
+              placeholder={linkInputs.nameInput.placeholder}
+              onValueChange={(value) =>
+                linkInputs.nameInput.onValueChanged(value)
+              }
+            ></LabeledInput>
 
-      <AddInfoConfiguration
-        configurationTitle={"Add more Links:"}
-        inputs={inputs}
-        onButtonclick={addLink}
-      ></AddInfoConfiguration>
+            <LabeledInput
+              label={linkInputs.urlInput.label}
+              placeholder={linkInputs.urlInput.placeholder}
+              onValueChange={(value) =>
+                linkInputs.urlInput.onValueChanged(value)
+              }
+            ></LabeledInput>
+
+            <button
+              className="deleteLinkButton"
+              onClick={() => deleteLink(linkInputs.key)}
+            >
+              X
+            </button>
+          </div>
+        );
+      })}
+
+      <button className="addButton" onClick={addLink}>
+        +
+      </button>
     </div>
   );
 }
