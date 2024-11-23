@@ -1,0 +1,10 @@
+.addInfoConfiguration {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.addInfoContent {
+  display: flex;
+  gap: 10px;
+}
