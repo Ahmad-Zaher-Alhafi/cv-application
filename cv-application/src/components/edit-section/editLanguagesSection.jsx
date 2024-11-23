@@ -1,5 +1,6 @@
 import LabeledInput from "./labeledInput";
 import LabeledDropdown from "./labeledDropdown";
+
 import { useState } from "react";
 import "/src/styles/edit-section/editLanguagesSection.css";
 
@@ -11,81 +12,108 @@ function EditLanguagesSection({ languages, setLanguages }) {
     { value: "Native", key: crypto.randomUUID() },
   ];
 
-  const [inputValue, setInputValue] = useState("");
-  const [dropDownValue, setDropDownValue] = useState(
-    languageFluencyOptions[0].value
-  );
+  const [languagesInputs, setLanguagesInputs] = useState([]);
 
   function addLanguage() {
+    const inputKey = crypto.randomUUID();
+
     const newLanguages = [...languages];
     newLanguages.push({
-      name: inputValue,
-      fluency: dropDownValue,
-      key: crypto.randomUUID(),
+      fluency: languageFluencyOptions[0].value,
+      key: inputKey,
     });
     setLanguages(newLanguages);
 
-    resetToDefaultState();
+    const newLanguagesInputs = [...languagesInputs];
+    newLanguagesInputs.push({
+      nameInput: {
+        label: "Language name: ",
+        onValueChanged: (value) => {
+          onLanguageNameChanged(newLanguages, inputKey, value);
+        },
+        placeholder: "e.g. Arabic",
+        key: inputKey + "nameKey",
+      },
+
+      fluencyDropdown: {
+        label: "Fluency level: ",
+        onValueChanged: (value) => {
+          onLanguageFluencyChanged(newLanguages, inputKey, value);
+        },
+        key: inputKey + "fluencyKey",
+      },
+
+      key: inputKey,
+    });
+
+    setLanguagesInputs(newLanguagesInputs);
   }
 
-  function resetToDefaultState() {
-    setInputValue("");
-    setDropDownValue(languageFluencyOptions[0].value);
+  function onLanguageNameChanged(newLanguages, key, newName) {
+    const changedlanguage = newLanguages.find((language) =>
+      language.key.includes(key)
+    );
+    changedlanguage.name = newName;
+    setLanguages((previousLanguages) => [...previousLanguages]);
+  }
+
+  function onLanguageFluencyChanged(newLanguages, key, newFluency) {
+    const changedlanguage = newLanguages.find((language) =>
+      language.key.includes(key)
+    );
+    changedlanguage.fluency = newFluency;
+
+    setLanguages((previousLanguages) => [...previousLanguages]);
   }
 
   function deleteLanguage(languageKey) {
-    const newLanguages = [...languages].filter(
-      (language) => language.key !== languageKey
+    const newlanguages = [...languages].filter(
+      (language) => !language.key.includes(languageKey)
     );
-    setLanguages(newLanguages);
+    setLanguages(newlanguages);
+
+    const newlanguagesInputs = languagesInputs.filter(
+      (languageInput) => !languageInput.key.includes(languageKey)
+    );
+    setLanguagesInputs(newlanguagesInputs);
   }
 
   return (
     <div className="editLanguagesSection">
-      <div className="editSectionTitle">Languages</div>
+      <div className="addLanguagesTitle">Add more languages:</div>
 
-      <ol className="languagesList">
-        {languages.map((language) => {
-          return (
-            <div className="languageSection" key={language.key}>
-              <li className="language">
-                {language.name + ": " + language.fluency}
-              </li>
-              <button
-                className="deleteLanguageButton"
-                onClick={() => deleteLanguage(language.key)}
-              >
-                X
-              </button>
-            </div>
-          );
-        })}
-      </ol>
+      {languagesInputs.map((languageInputs) => {
+        return (
+          <div className="addInfoContent" key={languageInputs.key}>
+            <LabeledInput
+              label={languageInputs.nameInput.label}
+              placeholder={languageInputs.nameInput.placeholder}
+              onValueChange={(value) =>
+                languageInputs.nameInput.onValueChanged(value)
+              }
+            ></LabeledInput>
 
-      <div className="addLanguagesConfiguration">
-        <div className="addLanguagesTitle">Add more languages:</div>
+            <LabeledDropdown
+              label={languageInputs.fluencyDropdown.label}
+              options={languageFluencyOptions}
+              onValueChange={(value) =>
+                languageInputs.fluencyDropdown.onValueChanged(value)
+              }
+            ></LabeledDropdown>
 
-        <div className="addLanguagesContent">
-          <LabeledInput
-            label={"Language name: "}
-            placeholder={"e.g. Arabic"}
-            onValueChange={(value) => setInputValue(value)}
-            inputValue={inputValue}
-          ></LabeledInput>
-          <LabeledDropdown
-            label={"Fluency level: "}
-            options={languageFluencyOptions}
-            onValueChanged={(value) => setDropDownValue(value)}
-            dropDownVlaue={dropDownValue}
-          ></LabeledDropdown>
-          <button
-            className="addLanguageButton"
-            onClick={() => addLanguage(languages)}
-          >
-            +
-          </button>
-        </div>
-      </div>
+            <button
+              className="deletelanguageButton"
+              onClick={() => deleteLanguage(languageInputs.key)}
+            >
+              X
+            </button>
+          </div>
+        );
+      })}
+
+      <button className="addButton" onClick={addLanguage}>
+        +
+      </button>
     </div>
   );
 }

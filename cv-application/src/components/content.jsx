@@ -11,9 +11,7 @@ function Content() {
   const [phoneNumber, setPhoneNumber] = useState("+905315190382");
   const [email, setEmail] = useState("z1_ahmad@hotmail.com");
 
-  const [languages, setLanguages] = useState([
-    { name: "English", fluency: "Advanced", key: crypto.randomUUID() },
-  ]);
+  const [languages, setLanguages] = useState([]);
 
   const [links, setLinks] = useState([]);
 

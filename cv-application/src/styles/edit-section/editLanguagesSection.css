@@ -3,12 +3,6 @@
   gap: 20px;
 }
 
-.addLanguagesConfiguration {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
 .addLanguagesContent {
   display: flex;
   gap: 10px;
