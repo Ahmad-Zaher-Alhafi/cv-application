@@ -33,27 +33,27 @@ function EditLanguagesSection({ languages, setLanguages }) {
     setDropDownValue(languageFluencyOptions[0].value);
   }
 
-  function deleteLanguage(languageName) {
+  function deleteLanguage(languageKey) {
     const newLanguages = [...languages].filter(
-      (language) => language.name !== languageName
+      (language) => language.key !== languageKey
     );
     setLanguages(newLanguages);
   }
 
   return (
     <div className="editLanguagesSection">
-      <div className="editSectiontitle">Languages</div>
+      <div className="editSectionTitle">Languages</div>
 
       <ol className="languagesList">
-        {languages.map((language, index) => {
+        {languages.map((language) => {
           return (
-            <div className="languageSection" key={index}>
+            <div className="languageSection" key={language.key}>
               <li className="language">
                 {language.name + ": " + language.fluency}
               </li>
               <button
                 className="deleteLanguageButton"
-                onClick={() => deleteLanguage(language.name)}
+                onClick={() => deleteLanguage(language.key)}
               >
                 X
               </button>

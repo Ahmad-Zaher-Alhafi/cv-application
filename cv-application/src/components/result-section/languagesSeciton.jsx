@@ -4,9 +4,9 @@ function LanguagesSection({ languages }) {
       <div className="resultSectiontitle">Languages</div>
       {
         <ol className="languagesList">
-          {languages.map((language, index) => {
+          {languages.map(language => {
             return (
-              <div className="languageSection" key={index}>
+              <div className="languageSection" key={language.key}>
                 <li className="language">
                   {language.name + ": " + language.fluency}
                 </li>
