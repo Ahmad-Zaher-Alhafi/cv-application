@@ -1,3 +1,5 @@
+import "/src/styles/result-section/summarySection.css";
+
 function SummarySection({ summary }) {
   return (
     <div className="summarySection">
