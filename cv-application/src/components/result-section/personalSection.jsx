@@ -1,3 +1,5 @@
+import "/src/styles/result-section/personalSection.css";
+
 function PersonalSection({ name, imgUrl }) {
   return (
     <div className="personalSection">

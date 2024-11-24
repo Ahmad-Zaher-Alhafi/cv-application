@@ -1,4 +1,4 @@
-import "/src/styles/content.css";
+import "/src/styles/result-section/resultContent.css";
 import PersonalSection from "./personalSection";
 import ContactSection from "./contactSection";
 import LanguagesSection from "./languagesSeciton";
@@ -17,11 +17,13 @@ function ResultContent({
   educations,
   summary,
   skills,
-  experiences
+  experiences,
 }) {
   return (
     <div className="resultSection">
       <div className="leftSection">
+        <div className="leftSectionHeader"></div>
+
         <PersonalSection name={name} imgUrl={imgUrl}></PersonalSection>
 
         <ContactSection
@@ -42,7 +44,6 @@ function ResultContent({
         <UlSection title={"Skills"} contents={skills}></UlSection>
 
         <UlSection title={"Experince"} contents={experiences}></UlSection>
-
       </div>
     </div>
   );

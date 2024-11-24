@@ -1,0 +1,23 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Ultra&display=swap");
+
+.personalSection {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.name {
+  font-size: xx-large;
+  text-align: center;
+  font-family: "Merriweather", serif;
+  font-weight: 900;
+
+  color: #244061;
+}
+
+img {
+  width: 250px;
+  border-radius: 25px;
+  box-shadow: 2px 2px 10px;
+}
