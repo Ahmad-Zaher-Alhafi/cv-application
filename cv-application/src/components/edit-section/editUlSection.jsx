@@ -7,6 +7,7 @@ function EditUlSection({
   title,
   inputLabel,
   inputPlaceholder,
+  useTextAreasInsteadOfInputs = false,
 }) {
   const [valuesInputs, setValuesInputs] = useState([]);
 
@@ -55,6 +56,7 @@ function EditUlSection({
         inputs={valuesInputs}
         onAddButtonclick={addValue}
         onDeleteButtonClicked={(valueKey) => deleteValue(valueKey)}
+        useTextAreasInsteadOfInputs={useTextAreasInsteadOfInputs}
       ></AddInfoConfiguration>
     </div>
   );

@@ -6,7 +6,11 @@ function UlSection({ title, contents }) {
       <div className="ulSectionContent">
         <ul className="ulSection">
           {contents.map((content) => {
-            return <li key={content.key}>{content.value}</li>;
+            return (
+              <li key={content.key}>
+                <pre>{content.value}</pre>
+              </li>
+            );
           })}
         </ul>
       </div>

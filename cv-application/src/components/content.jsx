@@ -21,6 +21,8 @@ function Content() {
 
   const [skills, setSkills] = useState([]);
 
+  const [experiences, setExperiences] = useState([]);
+
   return (
     <div className="content">
       <EditContent
@@ -39,6 +41,8 @@ function Content() {
         setSummary={setSummary}
         skills={skills}
         setSkills={setSkills}
+        experiences={experiences}
+        setExperiences={setExperiences}
       ></EditContent>
 
       <ResultContent
@@ -52,6 +56,7 @@ function Content() {
         educations={educations}
         summary={summary}
         skills={skills}
+        experiences={experiences}
       ></ResultContent>
     </div>
   );

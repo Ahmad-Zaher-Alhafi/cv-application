@@ -21,6 +21,8 @@ function EditContent({
   setSummary,
   skills,
   setSkills,
+  experiences,
+  setExperiences
 }) {
   return (
     <div className="editSection">
@@ -61,6 +63,15 @@ function EditContent({
         title={"Add more skills: "}
         inputLabel={"Skill: "}
         inputPlaceholder={"e.g React"}
+      ></EditUlSection>
+
+      <EditUlSection
+        values={experiences}
+        setValues={setExperiences}
+        title={"Add more experiences: "}
+        inputLabel={"Experience: "}
+        inputPlaceholder={"e.g I haev 5 years experience in game development"}
+        useTextAreasInsteadOfInputs={true}
       ></EditUlSection>
 
       {/* 
