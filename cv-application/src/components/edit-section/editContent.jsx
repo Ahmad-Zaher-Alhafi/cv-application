@@ -19,6 +19,8 @@ function EditContent({
   setEducations,
   summary,
   setSummary,
+  skills,
+  setSkills,
 }) {
   return (
     <div className="editSection">
@@ -53,10 +55,16 @@ function EditContent({
         setSummary={setSummary}
       ></EditSummarySection>
 
+      <EditUlSection
+        values={skills}
+        setValues={setSkills}
+        title={"Add more skills: "}
+        inputLabel={"Skill: "}
+        inputPlaceholder={"e.g React"}
+      ></EditUlSection>
+
       {/* 
-    education section
-    summary section
-    skills section
+   
     experience section
      */}
     </div>

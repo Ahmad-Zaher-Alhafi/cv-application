@@ -16,6 +16,7 @@ function ResultContent({
   links,
   educations,
   summary,
+  skills,
 }) {
   return (
     <div className="resultSection">
@@ -36,6 +37,8 @@ function ResultContent({
       </div>
       <div className="rightSection">
         <SummarySection summary={summary}></SummarySection>
+
+        <UlSection title={"Skills"} contents={skills}></UlSection>
       </div>
     </div>
   );
