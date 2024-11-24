@@ -3,6 +3,7 @@ import EditContactSection from "./editContactSection";
 import EditLanguagesSection from "./editLanguagesSection";
 import EditLinksSection from "./editLinksSection";
 import EditUlSection from "./editUlSection";
+import EditSummarySection from "./editSummarySection";
 
 function EditContent({
   setFullName,
@@ -16,6 +17,8 @@ function EditContent({
   setLinks,
   educations,
   setEducations,
+  summary,
+  setSummary,
 }) {
   return (
     <div className="editSection">
@@ -42,6 +45,11 @@ function EditContent({
         setValues={setEducations}
         title={"Add more education info: "}
       ></EditUlSection>
+
+      <EditSummarySection
+        summary={summary}
+        setSummary={setSummary}
+      ></EditSummarySection>
 
       {/* 
     education section

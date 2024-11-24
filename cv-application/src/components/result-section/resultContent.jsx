@@ -4,6 +4,7 @@ import ContactSection from "./contactSection";
 import LanguagesSection from "./languagesSeciton";
 import LinksSection from "./linksSeciton";
 import UlSection from "./ulSection";
+import SummarySection from "./summarySection";
 
 function ResultContent({
   name,
@@ -14,6 +15,7 @@ function ResultContent({
   languages,
   links,
   educations,
+  summary,
 }) {
   return (
     <div className="resultSection">
@@ -33,7 +35,7 @@ function ResultContent({
         <UlSection title={"Education"} contents={educations}></UlSection>
       </div>
       <div className="rightSection">
-        <h1>Right section</h1>
+        <SummarySection summary={summary}></SummarySection>
       </div>
     </div>
   );

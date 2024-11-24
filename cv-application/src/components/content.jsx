@@ -17,6 +17,8 @@ function Content() {
 
   const [educations, setEducations] = useState([]);
 
+  const [summary, setSummary] = useState("");
+
   return (
     <div className="content">
       <EditContent
@@ -31,6 +33,8 @@ function Content() {
         setLinks={setLinks}
         educations={educations}
         setEducations={setEducations}
+        summary={summary}
+        setSummary={setSummary}
       ></EditContent>
 
       <ResultContent
@@ -42,6 +46,7 @@ function Content() {
         languages={languages}
         links={links}
         educations={educations}
+        summary={summary}
       ></ResultContent>
     </div>
   );
