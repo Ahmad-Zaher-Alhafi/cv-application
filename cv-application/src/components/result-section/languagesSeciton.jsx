@@ -1,16 +1,16 @@
+import "/src/styles/result-section/languagesSection.css";
+
 function LanguagesSection({ languages }) {
   return (
     <div className="resultLanguagesSection">
-      <div className="resultSectiontitle">Languages</div>
+      <div className="resultLanguageSectionTitle">Languages</div>
       {
         <ol className="languagesList">
-          {languages.map(language => {
+          {languages.map((language) => {
             return (
-              <div className="languageSection" key={language.key}>
-                <li className="language">
-                  {language.name + ": " + language.fluency}
-                </li>
-              </div>
+              <li className="language" key={language.key}>
+                {language.name + ": " + language.fluency}
+              </li>
             );
           })}
         </ol>
