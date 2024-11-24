@@ -1,7 +1,10 @@
+import "/src/styles/result-section/contactSection.css";
+
 function ContactSection({ address, phoneNumber, email }) {
   return (
     <div className="resultContactSection">
       <div className="resultSectionTitle">Contact</div>
+
       <div className="addressSection">
         <div className="addressTitle">Address:</div>
         <div className="address">{address}</div>
