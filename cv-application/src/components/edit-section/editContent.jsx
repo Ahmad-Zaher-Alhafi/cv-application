@@ -44,6 +44,8 @@ function EditContent({
         values={educations}
         setValues={setEducations}
         title={"Add more education info: "}
+        inputLabel={"Degree: "}
+        inputPlaceholder={"e.g Bachelor of Computer engineering"}
       ></EditUlSection>
 
       <EditSummarySection

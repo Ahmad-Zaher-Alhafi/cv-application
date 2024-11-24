@@ -1,7 +1,13 @@
 import { useState } from "react";
 import AddInfoConfiguration from "./addInfoConfiguration";
 
-function EditUlSection({ values, setValues, title }) {
+function EditUlSection({
+  values,
+  setValues,
+  title,
+  inputLabel,
+  inputPlaceholder,
+}) {
   const [valuesInputs, setValuesInputs] = useState([]);
 
   function addValue() {
@@ -15,11 +21,11 @@ function EditUlSection({ values, setValues, title }) {
 
     const newValuesInputs = [...valuesInputs];
     newValuesInputs.push({
-      label: "Skill name: ",
+      label: inputLabel,
       onValueChanged: (value) => {
         onValueChanged(newValues, inputKey, value);
       },
-      placeholder: "e.g. React",
+      placeholder: inputPlaceholder,
       key: inputKey,
     });
 
