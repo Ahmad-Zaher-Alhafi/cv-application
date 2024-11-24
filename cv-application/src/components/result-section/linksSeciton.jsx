@@ -1,16 +1,16 @@
+import "/src/styles/result-section/linksSection.css";
+
 function LinksSection({ links }) {
   return (
     <div className="resultLinksSection">
-      <div className="resultSectionTitle">Links</div>
+      <div className="resultLinksSectionTitle">Links</div>
       {
         <ul className="LinksList">
           {links.map((link) => {
             return (
-              <div className="LinkSection" key={link.key}>
-                <li className="Link">
-                  <a href={link.url}>{link.name}</a>
-                </li>
-              </div>
+              <li className="link" key={link.key}>
+                <a href={link.url}>{link.name}</a>
+              </li>
             );
           })}
         </ul>
