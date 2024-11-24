@@ -1,8 +1,19 @@
-body{
+body {
   background-color: black;
 }
 
-#root{
+#root {
   width: 100%;
   height: auto;
+}
+
+/* General stuff shared across all components */
+
+pre {
+  margin: 0;
+}
+
+ul,
+ol {
+  margin: 0;
 }
