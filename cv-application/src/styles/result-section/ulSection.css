@@ -17,8 +17,20 @@
   border-width: 1px;
 }
 
-.ulSectionContent {
+.ulSectionContent,
+.ulSkillsContent {
   font-family: "Roboto", serif;
   font-size: large;
-  padding: 10px 10px 0 30px;
+  padding: 10px 0 0 30px;
+}
+
+.ulSkillsContent {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: minmax(20px, auto);
+  gap: 10px;
+}
+
+.textContent {
+  text-wrap: wrap;
 }

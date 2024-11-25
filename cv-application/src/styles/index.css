@@ -1,10 +1,16 @@
 body {
+  padding: 0;
+  margin: 0;
+
   background-color: black;
 }
 
 #root {
   width: 100%;
-  height: auto;
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
 }
 
 /* General stuff shared across all components */

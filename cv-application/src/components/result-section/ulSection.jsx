@@ -1,15 +1,15 @@
 import "/src/styles/result-section/ulSection.css";
 
-function UlSection({ title, contents }) {
+function UlSection({ title, contents, ulClassName = "ulSectionContent" }) {
   return (
     <div className="ulSection">
       <div className="ulSectionTitle">{title}</div>
 
-      <ul className="ulSectionContent">
+      <ul className={ulClassName}>
         {contents.map((content) => {
           return (
             <li key={content.key}>
-              <pre>{content.value}</pre>
+              <pre className="textContent">{content.value}</pre>
             </li>
           );
         })}

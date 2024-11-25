@@ -24,26 +24,26 @@ function ResultContent({
       <div className="leftSection">
         <div className="leftSectionHeader"></div>
 
-        <PersonalSection name={name} imgUrl={imgUrl}></PersonalSection>
-
-        <ContactSection
-          address={address}
-          phoneNumber={phoneNumber}
-          email={email}
-        ></ContactSection>
-
-        <LanguagesSection languages={languages}></LanguagesSection>
-
-        <LinksSection links={links}></LinksSection>
-
-        <UlSection title={"Education"} contents={educations}></UlSection>
+        <div className="leftSectionContent">
+          <PersonalSection name={name} imgUrl={imgUrl}></PersonalSection>
+          <ContactSection
+            address={address}
+            phoneNumber={phoneNumber}
+            email={email}
+          ></ContactSection>
+          <LanguagesSection languages={languages}></LanguagesSection>
+          <LinksSection links={links}></LinksSection>
+          <UlSection title={"Education"} contents={educations}></UlSection>
+        </div>
       </div>
       <div className="rightSection">
-        <SummarySection summary={summary}></SummarySection>
+        <div className="rightSectionContent">
+          <SummarySection summary={summary}></SummarySection>
+          <UlSection title={"Skills"} contents={skills} ulClassName="ulSkillsContent"></UlSection>
+          <UlSection title={"Experince"} contents={experiences}></UlSection>
+        </div>
 
-        <UlSection title={"Skills"} contents={skills}></UlSection>
-
-        <UlSection title={"Experince"} contents={experiences}></UlSection>
+        <div className="rightSectionHeader"></div>
       </div>
     </div>
   );
