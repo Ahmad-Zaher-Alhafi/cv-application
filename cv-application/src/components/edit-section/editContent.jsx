@@ -51,6 +51,7 @@ function EditContent({
       <EditLinksSection links={links} setLinks={setLinks}></EditLinksSection>
 
       <EditUlSection
+        useTextAreasInsteadOfInputs={true}
         values={educations}
         setValues={setEducations}
         title={"Add education: "}
