@@ -4,12 +4,12 @@ import EditContent from "./edit-section/editContent";
 import ResultContent from "./result-section/resultContent";
 
 function Content() {
-  const [fullName, setFullName] = useState("Ahmad Zaher Alhafi");
-  const [imgUrl, setImgUrl] = useState("./src/assets/CV photo.jpg");
+  const [fullName, setFullName] = useState("Your name");
+  const [imgUrl, setImgUrl] = useState("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAk0_WV-nb1sB6OuvVJ1gdmpxWzxU5GfGjng&s");
 
-  const [address, setAddress] = useState("Izmit, Turkey");
-  const [phoneNumber, setPhoneNumber] = useState("+905315190382");
-  const [email, setEmail] = useState("z1_ahmad@hotmail.com");
+  const [address, setAddress] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [email, setEmail] = useState("");
 
   const [languages, setLanguages] = useState([]);
 
