@@ -23,7 +23,7 @@ function EditContent({
   skills,
   setSkills,
   experiences,
-  setExperiences
+  setExperiences,
 }) {
   return (
     <div className="editSection">
@@ -31,6 +31,11 @@ function EditContent({
         onNameChanged={setFullName}
         onImgChanged={setImgUrl}
       ></EditPersonalSection>
+
+      <EditSummarySection
+        summary={summary}
+        setSummary={setSummary}
+      ></EditSummarySection>
 
       <EditContactSection
         setAddress={setAddress}
@@ -48,20 +53,15 @@ function EditContent({
       <EditUlSection
         values={educations}
         setValues={setEducations}
-        title={"Add more education info: "}
+        title={"Add education: "}
         inputLabel={"Degree: "}
         inputPlaceholder={"e.g Bachelor of Computer engineering"}
       ></EditUlSection>
 
-      <EditSummarySection
-        summary={summary}
-        setSummary={setSummary}
-      ></EditSummarySection>
-
       <EditUlSection
         values={skills}
         setValues={setSkills}
-        title={"Add more skills: "}
+        title={"Add skills: "}
         inputLabel={"Skill: "}
         inputPlaceholder={"e.g React"}
       ></EditUlSection>
@@ -69,7 +69,7 @@ function EditContent({
       <EditUlSection
         values={experiences}
         setValues={setExperiences}
-        title={"Add more experiences: "}
+        title={"Add experiences: "}
         inputLabel={"Experience: "}
         inputPlaceholder={"e.g I haev 5 years experience in game development"}
         useTextAreasInsteadOfInputs={true}

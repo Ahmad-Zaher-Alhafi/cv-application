@@ -64,7 +64,7 @@ function EditLinksSection({ links, setLinks }) {
 
   return (
     <div className="editLinksSection">
-      <div className="addInfoTitle">Add more links: </div>
+      <div className="addInfoTitle">Add links: </div>
 
       {linksInputs.map((linkInputs) => {
         return (

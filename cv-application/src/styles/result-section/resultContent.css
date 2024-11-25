@@ -11,6 +11,7 @@
   gap: 20px;
   justify-content: space-between;
   padding: 0 20px;
+  overflow: hidden;
 }
 
 .rightSection {
@@ -27,6 +28,7 @@
   gap: 20px;
   justify-content: space-between;
   padding: 8px 20px 0 20px;
+  overflow: hidden;
 }
 
 .leftSectionHeader {
@@ -37,6 +39,6 @@
 
 .rightSectionHeader {
   width: 100%;
-  height: 40px;
+  min-height: 40px;
   background-color: #376092;
 }

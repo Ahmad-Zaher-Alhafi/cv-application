@@ -19,6 +19,8 @@
 .resultSection {
   display: flex;
   flex: 2;
+  max-height: 100vh;
 
   background-color: #fafafa;
+  overflow: hidden;
 }

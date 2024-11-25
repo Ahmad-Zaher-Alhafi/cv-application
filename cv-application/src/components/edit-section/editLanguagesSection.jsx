@@ -80,7 +80,7 @@ function EditLanguagesSection({ languages, setLanguages }) {
 
   return (
     <div className="editLanguagesSection">
-      <div className="addLanguagesTitle">Add more languages:</div>
+      <div className="addLanguagesTitle">Add languages:</div>
 
       {languagesInputs.map((languageInputs) => {
         return (
