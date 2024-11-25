@@ -102,10 +102,10 @@ function EditLanguagesSection({ languages, setLanguages }) {
             ></LabeledDropdown>
 
             <button
-              className="deletelanguageButton"
+              className="deleteButton"
               onClick={() => deleteLanguage(languageInputs.key)}
             >
-              X
+              —
             </button>
           </div>
         );

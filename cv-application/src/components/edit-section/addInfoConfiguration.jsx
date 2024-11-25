@@ -27,7 +27,7 @@ function AddInfoConfiguration({
                 className="deleteButton"
                 onClick={() => onDeleteButtonClicked(input.key)}
               >
-                X
+                —
               </button>
             </div>
           );
@@ -44,7 +44,7 @@ function AddInfoConfiguration({
                 className="deleteButton"
                 onClick={() => onDeleteButtonClicked(input.key)}
               >
-                X
+                —
               </button>
             </div>
           );

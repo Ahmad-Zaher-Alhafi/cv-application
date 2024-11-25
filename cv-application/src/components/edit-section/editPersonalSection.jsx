@@ -1,9 +1,10 @@
 import LabeledInput from "./labeledInput";
+import "/src/styles/edit-section/editPersonalSection.css";
 
 function EditPersonalSection({ onNameChanged, onImgChanged }) {
   return (
     <div className="editPersonalSection">
-      <div className="editSectionTitle">Personal info</div>
+      <div className="editPersonalSectionTitle">Personal info</div>
       <LabeledInput
         label={"Full name: "}
         placeholder={"your full name"}

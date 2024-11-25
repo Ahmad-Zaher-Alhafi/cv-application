@@ -1,4 +1,5 @@
 import LabeledInput from "./labeledInput";
+import "/src/styles/edit-section/editContactSection.css";
 
 function EditContactSection({ setAddress, setPhoneNumber, setEmail }) {
   return (

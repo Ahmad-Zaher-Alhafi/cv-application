@@ -3,13 +3,17 @@
   height: 100%;
   display: flex;
 
-  gap: 20px;
   flex: 1;
 }
 
 .editSection {
-  background-color: lightslategray;
+  background-color: #fafafa;
   flex: 1;
+}
+
+.splitter {
+  width: 2px;
+  background-color: #244061;
 }
 
 .resultSection {

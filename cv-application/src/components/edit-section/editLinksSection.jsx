@@ -86,10 +86,10 @@ function EditLinksSection({ links, setLinks }) {
             ></LabeledInput>
 
             <button
-              className="deleteLinkButton"
+              className="deleteButton"
               onClick={() => deleteLink(linkInputs.key)}
             >
-              X
+              —
             </button>
           </div>
         );

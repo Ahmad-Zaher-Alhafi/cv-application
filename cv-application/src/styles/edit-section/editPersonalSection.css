@@ -1,16 +1,10 @@
-.editLanguagesSection {
+.editPersonalSection {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
-.addLanguagesContent {
-  display: flex;
-  gap: 10px;
-}
-
-
-.addLanguagesTitle {
+.editPersonalSectionTitle {
   color: #244061;
   font-weight: 900;
   font-family: "Merriweather", serif;

@@ -45,6 +45,8 @@ function Content() {
         setExperiences={setExperiences}
       ></EditContent>
 
+      <div className="splitter"></div>
+
       <ResultContent
         name={fullName}
         imgUrl={imgUrl}

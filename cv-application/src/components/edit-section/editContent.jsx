@@ -4,6 +4,7 @@ import EditLanguagesSection from "./editLanguagesSection";
 import EditLinksSection from "./editLinksSection";
 import EditUlSection from "./editUlSection";
 import EditSummarySection from "./editSummarySection";
+import "/src/styles/edit-section/editContent.css";
 
 function EditContent({
   setFullName,

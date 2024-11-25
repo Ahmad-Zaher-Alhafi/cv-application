@@ -1,0 +1,11 @@
+.editSummarySection {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.summaryContent{
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
